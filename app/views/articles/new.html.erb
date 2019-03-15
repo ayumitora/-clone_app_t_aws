@@ -1,15 +1,15 @@
 <%= form_with(model: @article, local: true) do |form| %>
-  <%# if @article.errors.any? %>
-<!--    <div id="error_explanation">-->
-<!--      <h2><%#= @article.errors.count %>件のエラーがあります。</h2>-->
-<!--      <ul>-->
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @article.errors.count %>件のエラーがあります。</h2>
+      <ul>
 
-        <%# @article.errors.full_messages.each do |msg| %>
-<!--          <li><%#= msg %></li>-->
-        <%# end %>
-<!--      </ul>-->
-<!--    </div>-->
-  <%# end %>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="article_content">
     <%= form.label :content %>
@@ -18,4 +18,4 @@
   <%= form.submit %>
 <% end %>
 
-<%= link_to 'つぶやき一覧へ', article_path %>
+<%= link_to 'つぶやき一覧へ', articles_path %>

@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
       redirect_to new_article_path,notice:"つぶやきが保存されました！"
     else
       render 'new'
+    end
   end
 
   def show
