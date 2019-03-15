@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   def index
+    @articles = Article.all
   end
 
   def new
@@ -7,8 +8,15 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    Article.create(article_params)
-    redirect_to new_article_path
+    @article = Article.create(article_params)
+    if @article.save
+      redirect_to new_article_path,notice:"つぶやきが保存されました！"
+    else
+      render 'new'
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
 
   private

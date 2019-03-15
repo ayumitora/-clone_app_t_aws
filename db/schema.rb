@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_03_15_040539) do
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
+    t.text "content"
   end
 
 end
