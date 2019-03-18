@@ -37,6 +37,10 @@ class ArticlesController < ApplicationController
     redirect_to articles_path, notice: "つぶやきを削除しました！"
   end
 
+  def confirm
+    @article = Article.new(article_params)
+  end
+
 
   private
 
