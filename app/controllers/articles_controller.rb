@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+
   def index
     @articles = Article.all
   end
@@ -10,33 +12,40 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.create(article_params)
     if @article.save
-      redirect_to new_article_path,notice:"つぶやきが保存されました！"
+      redirect_to articles_path,notice:"つぶやきが保存されました！"
     else
       render 'new'
     end
   end
 
   def show
-    @article = Article.find(params[:id])
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
     if @article.update(article_params)
-      redirect_to article_path, notice: "つぶやきを編集しました！"
+      redirect_to articles_path, notice: "つぶやきを編集しました！"
     else
       render 'edit'
     end
   end
 
+  def destroy
+    @article.destroy
+    redirect_to articles_path, notice: "つぶやきを削除しました！"
+  end
+
+
   private
 
   def article_params
     params.require(:article).permit(:content)
+  end
+
+  def set_article
+    @article = Article.find(params[:id])
   end
 
 end
