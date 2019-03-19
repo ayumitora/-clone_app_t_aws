@@ -1,3 +1,46 @@
-// Place all the styles related to the articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+header{
+  background-color: #72c7b3;
+  font-size:30px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.yield{
+  margin:0 auto;
+  text-align:center;
+}
+
+footer{
+  background-color: #72c7b3;
+  font-size:20px;
+  text-align:center;
+}
+
+h1,h2,h3,h4{
+  text-align:center;
+  margin: 30px;
+}
+
+.table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:700px;
+  text-align: left;
+}
+
+td{
+  padding: 10px;
+}
+
+th{
+  text-align: center;
+}
+
+.btn{
+  margin: 15px;
+}
+
+.article_content{
+  margin: 40px;
+}

@@ -12,10 +12,10 @@
   <% end %>
 
   <div class="article_content">
-    <%= form.label :content %>
+    <%= form.label :内容 %>
     <%= form.text_field :content %>
   </div>
-  <%= form.submit %>
+  <%= form.submit "この内容で保存"%>
 <% end %>
 
-<%= link_to 'つぶやき一覧へ', articles_path %>
+<%= link_to 'つぶやき一覧へ', articles_path,class: 'btn btn-info'  %>

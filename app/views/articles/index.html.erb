@@ -1,18 +1,20 @@
 <h1>つぶやき一覧</h1>
 <p><%= notice %></p>
-<table>
-  <tr>
-    <th>内容</th>
-  </tr>
-
-  <% @articles.each do |article| %>
+<div class="table">
+  <table>
     <tr>
-      <td><%= article.content %></td>
-      <td><%= link_to "詳細を確認する", article_path(article.id) %></td>
-      <td><%= link_to "編集する", edit_article_path(article.id) %></td>
-      <td><%= link_to "削除する", article_path(article.id), method: :delete ,data:{confirm:"本当に削除しますか？"} %></td>
+      <th>つぶやき内容</th>
     </tr>
-  <% end %>
-</table>
 
-<%= link_to '新しく呟く', new_article_path %>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.content %></td>
+        <td><%= link_to "詳細を確認する", article_path(article.id) %></td>
+        <td><%= link_to "編集する", edit_article_path(article.id) %></td>
+        <td><%= link_to "削除する", article_path(article.id), method: :delete ,data:{confirm:"本当に削除しますか？"} %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<%= link_to '新しく呟く', new_article_path,class: 'btn btn-default' %>
