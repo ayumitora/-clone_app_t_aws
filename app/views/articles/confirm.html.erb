@@ -1,8 +1,8 @@
 <h3>以下の内容で保存します</h3>
 
-<%= form_with(model: @article, url: articles_path, local: true )do|form| %>
-  <%= form.hidden_field :content %>
+<%= form_with(model: @article, local: true, url: articles_path,)do|form| %>
 
+  <%= form.hidden_field :content %>
   <p>本文：<%= @article.content %></p>
   <%= form.submit "保存" %>
 <% end %>
